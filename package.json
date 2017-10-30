@@ -1,0 +1,38 @@
+{
+  "name": "crewlink",
+  "version": "1.0.1",
+  "description": "This is simple crewLink demo project to test WEBPACK3.0 WITH GULP3.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start:dev": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com"
+  },
+  "author": "santosh",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-redis": "^3.3.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "jade": "^1.11.0",
+    "mongoose": "^4.12.5",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "nodemon": "^1.12.1",
+    "nodeunit": "^0.11.2",
+    "nohm": "^0.9.8",
+    "path": "^0.12.7",
+    "q": "^1.5.1",
+    "redis": "^2.8.0",
+    "sequelize": "^4.20.1",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
+}
