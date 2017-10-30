@@ -69,8 +69,7 @@ app.all('/*', function (req, res, next) {
     }
 });
 
-//app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
-
+app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', routes);
 app.use('/mysql', mysqlroutes);
 
