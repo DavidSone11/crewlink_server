@@ -1,5 +1,5 @@
 {
-  "name": "crewlink",
+  "name": "crewlink_server",
   "version": "1.0.1",
   "description": "This is simple crewLink demo project to test WEBPACK3.0 WITH GULP3.0",
   "main": "gulpfile.js",
