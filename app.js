@@ -13,7 +13,7 @@ var mysqlroutes = require('./routes/mysqlindex.js');
 
 var app = express();
 
-new mongodb();
+//new mongodb();
 //new redisdb();
 var raw_port = parseInt(process.env.PORT, 10) || 8000;
 
@@ -24,7 +24,7 @@ process.argv.forEach(function (val, index, array) {
         console.log("raw_port : " + raw_port);
     }
 });
-var port = normalizePort(raw_port || '4000');
+var port = normalizePort(raw_port);
 app.set('port', port);
 
 var server = app.listen(port, function () {
@@ -76,23 +76,23 @@ app.use('/mysql', mysqlroutes);
 
 
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-      res.status(err.status || 500);
-      res.render('error', {
-        message: err.message,
-        error: err
-      });
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  }
-  
-  // production error handler
-  // no stacktraces leaked to user
-  app.use(function(err, req, res, next) {
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
-      message: err.message,
-      error: {}
+        message: err.message,
+        error: {}
     });
-  });
+});
 
 module.exports = app;
