@@ -5,7 +5,11 @@ var config = require("../config/sequlizeConfig");
 var sequelize = new Sequelize(config.db.database, config.db.username, config.db.password, {
     operatorsAliases: false,
     host: config.db.host,
-    dialect: 'mysql', //|'sqlite'|'postgres'|'mssql'
+    //dialect: 'mysql'||'sqlite'||'postgres'||'mssql',
+    dialect: 'mysql',
+   // dialect: 'sqlite',
+   // dialect: 'postgres',
+   // dialect: 'mssql',
     pool: {
         max: 5,
         min: 0,
