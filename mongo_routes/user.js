@@ -13,6 +13,16 @@ var user = {
             page: parseInt(req.query.page) || 1,
             order: req.query.order || 'userName'
         };
+        var query = User.find({}).sort("userName");
+        query.paginate(options, function(err, results) {
+            if(err)
+               throw err;
+               else{
+                return res.json(results);
+               }
+            
+            
+          });
 
 
     },
