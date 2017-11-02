@@ -11,6 +11,7 @@ require('./middlewares/custom-cors');
 
 var routes = require('./routes/index');
 var mysqlroutes = require('./routes/mysqlindex.js');
+var mongoroutes = require('./routes/mongoIndex.js');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.options('*', cors());
 app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', routes);
 app.use('/mysql', mysqlroutes);
+app.use('/mongo', mongoroutes);
 
 
 if (app.get('env') === 'development') {
