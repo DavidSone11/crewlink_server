@@ -1,11 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.all('/*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", req.headers.origin); // restrict it to the required domain

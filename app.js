@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongodb = require('./mongo_connect/mongodb');
 var redisdb = require('./redis_connect/redisdb');
+var cors = require('cors');
 require('./middlewares/custom-cors');
 
 var routes = require('./routes/index');
@@ -13,7 +14,7 @@ var mysqlroutes = require('./routes/mysqlindex.js');
 
 var app = express();
 
-//new mongodb();
+new mongodb();
 //new redisdb();
 var raw_port = parseInt(process.env.PORT, 10) || 8000;
 
@@ -50,7 +51,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
-//app.use(favicon(path.join(__dirname, 'public/icons', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public/icons', 'favicon.ico')));
 
 
 

@@ -1,4 +1,4 @@
-"use strict";
+" use strict";
 
 var role = require('../mysql_models/Role.js');
 var db = require('../mysql_connect/mysqldb.js'),
