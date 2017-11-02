@@ -38,6 +38,19 @@
   "devDependencies": {
     "cors": "^2.8.4",
     "jsdoc": "^3.5.5",
-    "mongoose-query-paginate": "^1.0.3"
+    "mongoose-query-paginate": "^1.0.3",
+    "socket.io": "^2.0.4"
+  },
+  "window": {
+    "title": "CREWLINKSERVER",
+    "toolbar": false,
+    "frame": true,
+    "position": "center",
+    "fullscreen": false,
+    "resizable": false,
+    "width": 1000,
+    "height": 600,
+    "min_width": 600,
+    "min_height": 400
   }
 }

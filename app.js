@@ -9,6 +9,7 @@ var redisdb = require('./redis_connect/redisdb');
 var cors = require('cors');
 require('./middlewares/custom-cors');
 
+
 var routes = require('./routes/index');
 var mysqlroutes = require('./routes/mysqlindex.js');
 var mongoroutes = require('./routes/mongoIndex.js');
@@ -32,7 +33,7 @@ app.set('port', port);
 var server = app.listen(port, function () {
     console.log('Server listening on url: http://localhost:' + port);
 });
-
+var socketIo = require('socket.io').listen(server);
 
 
 function normalizePort(val) {
@@ -61,6 +62,8 @@ app.options('*', cors());
 
 app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', routes);
+app.use('/chat', require('./chat_app/chatApp')(app, socketIo));
+
 app.use('/mysql', mysqlroutes);
 app.use('/mongo', mongoroutes);
 
