@@ -54,6 +54,7 @@ app.set('view engine', 'jade');
 
 
 app.use(favicon(path.join(__dirname, 'public/icons', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
@@ -62,7 +63,7 @@ app.options('*', cors());
 
 app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', routes);
-app.use('/chat', require('./chat_app/chatApp')(app, socketIo));
+//app.use('/chat', require('./chat_app/chatApp')(app, socketIo));
 
 app.use('/mysql', mysqlroutes);
 app.use('/mongo', mongoroutes);
