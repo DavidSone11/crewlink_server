@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-
-var config = require("../config/sequlizeConfig");
+mongoose.Promise = global.Promise;
 
 var options = {
     useMongoClient: true,
