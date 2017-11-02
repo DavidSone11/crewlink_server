@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var multer  = require('multer')
+
 
 var user = require('../mysql_routes/user.js');
+var upload = multer({ dest: './uploads' });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
