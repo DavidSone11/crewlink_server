@@ -36,6 +36,7 @@
     "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
+    "cors": "^2.8.4",
     "jsdoc": "^3.5.5"
   }
 }

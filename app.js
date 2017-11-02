@@ -69,6 +69,10 @@ app.all('/*', function (req, res, next) {
     }
 });
 
+
+app.use(cors());
+app.options('*', cors());
+
 app.all('/api/v1/*', [require('./middlewares/validateRequest')]);
 app.use('/', routes);
 app.use('/mysql', mysqlroutes);
