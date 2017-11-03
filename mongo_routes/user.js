@@ -16,7 +16,7 @@ var user = {
         var query = User.find({}).sort("userName");
         query.paginate(options, function(err, results) {
             if(err)
-               throw err;
+                throw err;
                else{
                 return res.json(results);
                }
