@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/api/v1/users', user.getUsers);
-router.put('/api/v1/user/', user.updateUser);
-router.put('/api/v1/user/:id', user.deleteUser);
-router.post('/api/v1/user', user.creatUser);
+router.put('/api/v1/users/', user.updateUser);
+router.delete('/api/v1/users/:id', user.deleteUser);
+router.post('/api/v1/users', user.creatUser);
 
 
 
