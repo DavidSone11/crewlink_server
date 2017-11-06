@@ -2,7 +2,6 @@
   "name": "crewlink_server",
   "version": "1.0.1",
   "description": "This is simple crewLink demo project to test WEBPACK3.0 WITH GULP3.0",
-  
   "main": "index.html",
   "scripts": {
     "start:dev": "nodemon ./app.js",
@@ -40,6 +39,7 @@
     "cors": "^2.8.4",
     "jsdoc": "^3.5.5",
     "mongoose-query-paginate": "^1.0.3",
+    "nodemailer": "^4.3.1",
     "socket.io": "^2.0.4"
   },
   "window": {
