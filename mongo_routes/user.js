@@ -14,46 +14,44 @@ var user = {
             order: req.query.order || 'userName'
         };
         var query = User.find({}).sort(options.order);
-        query.paginate(options, function(err, results) {
-            if(err)
-                throw err;
-               else{
-                return res.json(results);
-               }
-            
-            
-          });
-
-
-    },
-
-    creatUser: function (req, res) {
-
-        User.create({
-            firstname: 'janedoe',
-            lastname: 'janedoe',
-            username: 'janedoe',
-            password: 'janedoe'
-        }, function (err, results) {
-
+        query.paginate(options, function (err, results) {
             if (err)
                 throw err;
             else {
                 return res.json(results);
             }
+
+
         });
 
 
-
     },
-    updateUser: function (req, res) {
 
-
+    creatUser: function (req, res) {
+        User.create({
+            userName: req.body.userName,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            password: req.body.password,
+            email: req.body.email,
+            roleCode: req.body.roleCode,
+            userProfile: req.body.userProfile
+        }, function (err, user) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            return res.status(200);
+        });
     },
-    deleteUser: function (req, res) {
+updateUser: function (req, res) {
 
 
-    }
+},
+deleteUser: function (req, res) {
+
+
+}
 
 };
 module.exports = user;

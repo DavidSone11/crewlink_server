@@ -16,6 +16,22 @@ var mongoroutes = require('./routes/mongoIndex.js');
 
 var app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(favicon(path.join(__dirname, 'public/icons', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 new mongodb();
 //new redisdb();
 var raw_port = parseInt(process.env.PORT, 10) || 8000;
@@ -49,12 +65,7 @@ function normalizePort(val) {
 
     return false;
 }
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
-
-app.use(favicon(path.join(__dirname, 'public/icons', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'public')));
 
 
 
